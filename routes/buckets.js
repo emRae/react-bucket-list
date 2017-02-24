@@ -4,13 +4,13 @@ const Bucket = require('../models/bucket');
 const List = require('../models/list');
 const Item = require('../models/item');
 
-router.get('/', (req, res)) => {
+router.get('/', (req, res) => {
   Bucket.find( ( err, buckets) => {
     res.json(buckets);
   });
-};
+});
 
-router.post('/' (req, res) => {
+router.post('/', (req, res) => {
   new Bucket({
     name: req.body.name
   }).save( ( err, bucket) => {
